@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form id="myForm">
+    <div>
+        <div>
+            <label>Anexe um arquivo</label>
+        </div>
+
+        <div class="" style="border: 1px dashed #4444; padding: 10px;">
+
+            <div class="wrapper" style="padding: 10px;">
+
+                <input type="radio" name="select" id="crip" value="crip" checked>
+                <label for="crip" class="option option-1">
+                    <span id="type-crip">Criptografia</span>
+                </label>
+
+                <input type="radio" name="select" id="decrip" value="decrip">
+                <label for="decrip" class="option option-2">
+                    <span id="type-decrip">Descriptografia</span>
+                </label>
+
+            </div>
+
+            <div class="" style="padding: 10px;">
+                <label for="selectClient">Selecione um cliente</label>
+                <select id="selectClient">
+                    <option value="JSC">JSC</option>
+                </select>
+            </div>
+
+            <div class="" style="padding: 10px;">
+                <label for="fileInput">Anexe um arquivo</label>
+                <input type="file" id="fileInput" alt="file" />
+            </div>
+
+            <div class="" style="padding: 10px;">
+                <button type="button" class="btn btn-primary" id="btnFunction">Confirmar</button>
+            </div>
+
+        </div>
+    </div>
+</form>
+
+<style>
+
+
+
+</style>
+
+
+@section JavaScripts {
+
+    <script src="~/lib/jquery.form/jquery.form.js"></script>
+    <script src="~/js/Criptografia.js" asp-append-version="true"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+}
+
