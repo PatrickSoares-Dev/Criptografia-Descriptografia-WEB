@@ -59,8 +59,6 @@ namespace Criptografia.Controllers
         }
 
 
-
-
         [HttpPost]
         [Route("/crip")]
         public FileResult Crip(string clientName, List<IFormFile> files)
