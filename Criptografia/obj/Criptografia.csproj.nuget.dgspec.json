@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\patrick.oliveira\\Desktop\\Cripto WEB\\Criptografia\\Criptografia-Descriptografia-WEB\\Criptografia\\Criptografia.csproj": {}
+    "C:\\Users\\patrick.oliveira\\Desktop\\Nova pasta (2)\\Criptografia-Descriptografia-WEB\\Criptografia\\Criptografia.csproj": {}
   },
   "projects": {
-    "C:\\Users\\patrick.oliveira\\Desktop\\Cripto WEB\\Criptografia\\Criptografia-Descriptografia-WEB\\Criptografia\\Criptografia.csproj": {
+    "C:\\Users\\patrick.oliveira\\Desktop\\Nova pasta (2)\\Criptografia-Descriptografia-WEB\\Criptografia\\Criptografia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\patrick.oliveira\\Desktop\\Cripto WEB\\Criptografia\\Criptografia-Descriptografia-WEB\\Criptografia\\Criptografia.csproj",
+        "projectUniqueName": "C:\\Users\\patrick.oliveira\\Desktop\\Nova pasta (2)\\Criptografia-Descriptografia-WEB\\Criptografia\\Criptografia.csproj",
         "projectName": "Criptografia",
-        "projectPath": "C:\\Users\\patrick.oliveira\\Desktop\\Cripto WEB\\Criptografia\\Criptografia-Descriptografia-WEB\\Criptografia\\Criptografia.csproj",
+        "projectPath": "C:\\Users\\patrick.oliveira\\Desktop\\Nova pasta (2)\\Criptografia-Descriptografia-WEB\\Criptografia\\Criptografia.csproj",
         "packagesPath": "C:\\Users\\patrick.oliveira\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\patrick.oliveira\\Desktop\\Cripto WEB\\Criptografia\\Criptografia-Descriptografia-WEB\\Criptografia\\obj\\",
+        "outputPath": "C:\\Users\\patrick.oliveira\\Desktop\\Nova pasta (2)\\Criptografia-Descriptografia-WEB\\Criptografia\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\patrick.oliveira\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,0 +1,31 @@
+*********************************
+*      HEADER DESCRIPTION       *
+*********************************
+Customer: LinksField
+Quantity: 1000
+Type: ISO
+Batch: 00003
+Profile: 01.00
+Graph_Profile: 01
+*
+SMSC: 550402101000
+*
+SPN: LinksField
+PNN: LinksField
+*
+Address1:  LF BRASIL
+Address2: Av. das Nações Unidas, 14401, Torre Tarumã - 2810
+Address3: Vl. Gertrudes - São Paulo
+Address4: Brazil
+*********************************
+*        INPUT VARIABLES        *
+*********************************
+Var_In_List: ICCID/IMSI
+ICCID: 8955400000000300050
+IMSI: 724400008000050
+*********************************
+*       OUTPUT VARIABLES        *
+*********************************
+Var_Out : ICCID/IMSI/PIN1/PIN2/PUK1/PUK2/Ki/ADM1/ADM2/ACC
+
+

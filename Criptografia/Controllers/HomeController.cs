@@ -151,7 +151,7 @@ namespace Criptografia.Controllers
                 string extensaoArquivo = Path.GetExtension(filePath);
 
                 // Verifica se o arquivo deve ser criptografado
-                if (extensaoArquivo == ".out" || extensaoArquivo == ".ota")
+                if (extensaoArquivo == ".out" || extensaoArquivo == ".ota" || extensaoArquivo == ".inp" || extensaoArquivo == ".INP" || extensaoArquivo == ".txt" || extensaoArquivo == ".gpg")
                 {
                     // Verifica se a empresa está no dicionário de chaves
                     if (chavesClientes.ContainsKey(clientName))

@@ -1,0 +1,32 @@
+****************************************************
+*             HEADER DESCRIPTION                   *
+****************************************************
+Customer:		Telecall
+Quantity:		5000
+Type:			PLUG-IN
+*
+Profile:		01.00
+*
+Batch:			12354
+*
+Graph_Profile:		25.05
+*
+SMSC:			550402101000
+*
+SPN:			fluke
+PNN:			fluke
+*
+Address1:		Av. das Americas, 3434
+Address2:		Bloco 1, Sala 505
+Address3:		Rio de Janeiro, RJ
+Address4:		Brasil
+****************************************************
+*                INPUT VARIABLES                   *
+****************************************************
+Var_In_List: 
+ICCID:			8955400000000200100
+IMSI:			724400000051100
+****************************************************
+*                OUTPUT VARIABLES                  *
+****************************************************
+Var_Out: IMSI/ICCID/MSISDN/PIN1/PUK1/PIN2/PUK2/ADM1/KI/ACC

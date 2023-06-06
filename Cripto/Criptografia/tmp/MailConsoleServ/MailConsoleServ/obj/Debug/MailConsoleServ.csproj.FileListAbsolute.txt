@@ -1,0 +1,6 @@
+c:\users\telecall\source\repos\MailConsoleServ\MailConsoleServ\obj\Debug\MailConsoleServ.csprojAssemblyReference.cache
+c:\users\telecall\source\repos\MailConsoleServ\MailConsoleServ\obj\Debug\MailConsoleServ.csproj.CoreCompileInputs.cache
+c:\users\telecall\source\repos\MailConsoleServ\MailConsoleServ\bin\Debug\MailConsoleServ.exe
+c:\users\telecall\source\repos\MailConsoleServ\MailConsoleServ\bin\Debug\MailConsoleServ.pdb
+c:\users\telecall\source\repos\MailConsoleServ\MailConsoleServ\obj\Debug\MailConsoleServ.exe
+c:\users\telecall\source\repos\MailConsoleServ\MailConsoleServ\obj\Debug\MailConsoleServ.pdb

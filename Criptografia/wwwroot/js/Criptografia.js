@@ -24,6 +24,8 @@
     data.append('clientName', selectedValue);
     data.append('files', selectedFile);
 
+    console.log(data)
+
     // Fazer a requisição AJAX
     $.ajax({
         url: '/crypt',
@@ -34,6 +36,7 @@
         contentType: false,
         success: function (response) {
             let dataFile = response.fileName;
+            console.log(dataFile)
             if (response != null && response.fileName != null) {
                 // Verificar se o link de download já existe
                 var link = document.getElementById("downloadLink");
