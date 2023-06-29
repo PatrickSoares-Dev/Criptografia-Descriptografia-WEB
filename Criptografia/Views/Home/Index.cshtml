@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
+<div id="drop-area">
 <form id="myForm">
     <div>
         <div>
@@ -24,6 +24,7 @@
                 <label for="selectClient">Selecione um cliente</label>
                 <select id="selectClient">
                     <option value="JSC">JSC</option>
+                    <option value="VALID">VALID</option>
                 </select>
             </div>
 
@@ -38,7 +39,7 @@
         </div>
     </div>
 </form>
-
+</div>
 <style>
 
 
@@ -51,6 +52,8 @@
     <script src="~/lib/jquery.form/jquery.form.js"></script>
     <script src="~/js/Criptografia.js" asp-append-version="true"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.js"></script>
 
 }
 

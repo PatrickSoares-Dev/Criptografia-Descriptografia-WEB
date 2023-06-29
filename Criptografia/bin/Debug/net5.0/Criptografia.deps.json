@@ -33,6 +33,7 @@
     ".NETCoreApp,Version=v5.0": {
       "Criptografia/1.0.0": {
         "dependencies": {
+          "JSZip": "3.7.1",
           "Microsoft.AspNetCore.Http": "2.2.2",
           "Microsoft.AspNetCore.Http.Features": "5.0.17",
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "5.0.17",
@@ -337,6 +338,7 @@
           "lib/netstandard2.0/BouncyCastle.Cryptography.dll": {}
         }
       },
+      "JSZip/3.7.1": {},
       "Microsoft.AspNetCore.Http/2.2.2": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
@@ -2319,6 +2321,13 @@
       "sha512": "sha512-NNQaa4eyf5YjSdLKUWGPzq5HXZQc3yGybfIOkR6UY1C/rRFWdo0UhSzBqqnxwGnq3ie4vkN0JlzhhANjfTIJIQ==",
       "path": "bouncycastle.cryptography/2.1.1",
       "hashPath": "bouncycastle.cryptography.2.1.1.nupkg.sha512"
+    },
+    "JSZip/3.7.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1K3OW7ga5S1rqRrQFMxeESbgb1+IBv4trJFjcHfM9vsAXNcxk+cxjBxacv+220kVtaGHRe0fpWYxwQfV2dx8pg==",
+      "path": "jszip/3.7.1",
+      "hashPath": "jszip.3.7.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Http/2.2.2": {
       "type": "package",

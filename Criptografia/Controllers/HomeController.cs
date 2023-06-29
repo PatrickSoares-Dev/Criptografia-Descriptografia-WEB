@@ -10,12 +10,14 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using static System.Net.WebRequestMethods;
 
 namespace Criptografia.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private static string caminhoArquivoDecrip;
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -66,56 +68,56 @@ namespace Criptografia.Controllers
             Dictionary<string, string[]> chavesClientes = new Dictionary<string, string[]>
             {
                 { "JSC", new string[] {
-                    @"C:\Users\patrick.oliveira\Desktop\Criptografia\Criptografia\Public Keys\JSC\MAG.asc",
-                    @"C:\Users\patrick.oliveira\Desktop\Criptografia\Criptografia\Public Keys\JSC\RobertoGuisasolaPinachoJSC.asc",
-                    @"C:\Users\patrick.oliveira\Desktop\Criptografia\Criptografia\Public Keys\JSC\Virginia Raluca Croitoru.asc"
+                    @"C:\Users\ana.pinheiro\Downloads\Criptografia\Public Keys\JSC\MAG.asc",
+                    @"C:\Users\ana.pinheiro\Downloads\Criptografia\Public Keys\JSC\RobertoGuisasolaPinachoJSC.asc",
+                    @"C:\Users\ana.pinheiro\Downloads\Criptografia\Public Keys\JSC\Virginia Raluca Croitoru.asc"
                 } },
                 { "VALID", new string[] {
-                    @"C:\Users\patrick.oliveira\Desktop\Criptografia\Criptografia\Criptografia\Public Keys\VALID\proceso.ficheros.asc",
-                    @"C:\Users\patrick.oliveira\Desktop\Criptografia\Criptografia\Criptografia\Public Keys\VALID\VALID_TCs.asc"
+                    @"C:\Users\ana.pinheiro\Downloads\Criptografia\Public Keys\VALID\proceso.ficheros.asc",
+                    @"C:\Users\ana.pinheiro\Downloads\Criptografia\Public Keys\VALID\VALID_TCs.asc"
                 } },
                 { "1OT", new string[] {
-                    @"C:\Users\patrick.oliveira\Desktop\Criptografia\Criptografia\Public Keys\1OT\1oT_Ken-Tristan_Peterson.asc",
-                    @"C:\Users\patrick.oliveira\Desktop\Criptografia\Criptografia\Public Keys\1OT\1oT_Marcin_Kulczycki.asc",
-                    @"C:\Users\patrick.oliveira\Desktop\Criptografia\Criptografia\Public Keys\1OT\proceso.ficheros.asc",
-                    @"C:\Users\patrick.oliveira\Desktop\Criptografia\Criptografia\Public Keys\1OT\VALID_TCs.asc"
+                    @"C:\Users\ana.pinheiro\Downloads\Criptografia\Public Keys\1OT\1oT_Ken-Tristan_Peterson.asc",
+                    @"C:\Users\ana.pinheiro\Downloads\Criptografia\Public Keys\1OT\1oT_Marcin_Kulczycki.asc",
+                    @"C:\Users\ana.pinheiro\Downloads\Criptografia\Public Keys\1OT\proceso.ficheros.asc",
+                    @"C:\Users\ana.pinheiro\Downloads\Criptografia\Public Keys\1OT\VALID_TCs.asc"
                 } },
                 { "GEMALTO", new string[] {
-                    @"C:\Users\patrick.oliveira\Desktop\Criptografia\Criptografia\Public Keys\GEMALTO\DGC_CVA_V2.asc",
+                    @"C:\Users\ana.pinheiro\Downloads\Criptografia\Public Keys\GEMALTO\DGC_CVA_V2.asc",
                 } },
                 { "LinksField", new string[] {
-                    @"C:\Users\patrick.oliveira\Desktop\Criptografia\Criptografia\Criptografia\Public Keys\LinksField\linksfield_pk_brasil.asc",
-                    @"C:\Users\patrick.oliveira\Desktop\Criptografia\Criptografia\Public Keys\JSC\MAG.asc"
+                    @"C:\Users\ana.pinheiro\Downloads\Criptografia\Public Keys\LinksField\linksfield_pk_brasil.asc",
+                    @"C:\Users\ana.pinheiro\Downloads\Criptografia\Public Keys\JSC\MAG.asc"
                 } },
                 { "PARETEUM", new string[] {
-                    @"C:\Users\patrick.oliveira\Desktop\Criptografia\Criptografia\Criptografia\Public Keys\PARETEUM\PTSecure.asc",
-                    @"C:\Users\patrick.oliveira\Desktop\Criptografia\Criptografia\Criptografia\Public Keys\PARETEUM\Ramy Sayed.asc",
-                    @"C:\Users\patrick.oliveira\Desktop\Criptografia\Criptografia\Criptografia\Public Keys\PARETEUM\Ramy.asc",
-                    @"C:\Users\patrick.oliveira\Desktop\Criptografia\Criptografia\Criptografia\Public Keys\PARETEUM\Teumpub.asc"
+                    @"C:\Users\ana.pinheiro\Downloads\Criptografia\Public Keys\PARETEUM\PTSecure.asc",
+                    @"C:\Users\ana.pinheiro\Downloads\Criptografia\Public Keys\PARETEUM\Ramy Sayed.asc",
+                    @"C:\Users\ana.pinheiro\Downloads\Criptografia\Public Keys\PARETEUM\Ramy.asc",
+                    @"C:\Users\ana.pinheiro\Downloads\Criptografia\Public Keys\PARETEUM\Teumpub.asc"
                 } },
                 { "GD", new string[] {
-                    @"C:\Users\patrick.oliveira\Desktop\Criptografia\Criptografia\Criptografia\Public Keys\G&D\GSM_Datagen_Brazil.asc"
+                    @"C:\Users\ana.pinheiro\Downloads\Criptografia\Public Keys\G&D\GSM_Datagen_Brazil.asc"
                 } },
                 { "WATCHDATA", new string[] {
-                    @"C:\Users\patrick.oliveira\Desktop\Criptografia\Criptografia\Criptografia\Public Keys\WatchData\AdH_Watchdata.asc",
-                    @"C:\Users\patrick.oliveira\Desktop\Criptografia\Criptografia\Criptografia\Public Keys\WatchData\lu meng.asc",
+                    @"C:\Users\ana.pinheiro\Downloads\Criptografia\Public Keys\WatchData\AdH_Watchdata.asc",
+                    @"C:\Users\ana.pinheiro\Downloads\Criptografia\Public Keys\WatchData\lu meng.asc",
                 } },
                 { "TELIA", new string[] {
-                    @"C:\Users\patrick.oliveira\Desktop\Criptografia\Criptografia\Public Keys\TELIA\DGC_CVA_V3.asc",
-                    @"C:\Users\patrick.oliveira\Desktop\Criptografia\Criptografia\Public Keys\TELIA\PublicKeyNicolasR.asc",
-                    @"C:\Users\patrick.oliveira\Desktop\Criptografia\Criptografia\Public Keys\TELIA\Teumpub.asc",
+                    @"C:\Users\ana.pinheiro\Downloads\Criptografia\Public Keys\TELIA\DGC_CVA_V3.asc",
+                    @"C:\Users\ana.pinheiro\Downloads\Criptografia\Public Keys\TELIA\PublicKeyNicolasR.asc",
+                    @"C:\Users\ana.pinheiro\Downloads\Criptografia\Public Keys\TELIA\Teumpub.asc",
                 } },
                 { "WORKZ", new string[] {
-                    @"C:\Users\patrick.oliveira\Desktop\Criptografia\Criptografia\Public Keys\WORKZ\Workz_SIMDATA.asc",
-                    @"C:\Users\patrick.oliveira\Desktop\Criptografia\Criptografia\Public Keys\WORKZ\Workz_SIMDATA (739E7C87) – Public.asc",
+                    @"C:\Users\ana.pinheiro\Downloads\Criptografia\Public Keys\WORKZ\Workz_SIMDATA.asc",
+                    @"C:\Users\ana.pinheiro\Downloads\Criptografia\Public Keys\WORKZ\Workz_SIMDATA (739E7C87) – Public.asc",
                 } },
             };
 
             foreach (var file in files)
             {
                 string fileName = file.FileName;
-                string filePath = Path.Combine(@"C:\Users\patrick.oliveira\Desktop\Criptografia\Criptografia\Arquivos\Arquivos CRIP", fileName);
-                string encryptedFilePath = Path.Combine(@"C:\Users\patrick.oliveira\Desktop\Criptografia\Criptografia\Arquivos\Criptografados", fileName + ".pgp");
+                string filePath = Path.Combine(@"C:\Users\ana.pinheiro\Downloads\Criptografia\Criptografia\Arquivos\Arquivos CRIP", fileName);
+                string encryptedFilePath = Path.Combine(@"C:\Users\ana.pinheiro\Downloads\Criptografia\Criptografia\Arquivos\Criptografados", fileName + ".pgp");
 
                 // Salva o arquivo enviado pelo front-end no servidor
                 int maxRetries = 3;
@@ -158,11 +160,11 @@ namespace Criptografia.Controllers
                     {
                         string[] chavesCliente = chavesClientes[clientName];
 
+
                         using (PGP pgpInstance = new PGP())
                         {
                             // Criptografa e assina o arquivo
-                            pgpInstance.EncryptFileAndSign(filePath, encryptedFilePath, chavesCliente, @"C:\Users\patrick.oliveira\Desktop\Criptografia\Criptografia\Old\20200110\TCK.asc", "Gi?6ae}a)14Cv&U%&!U#Qp5^j!n+SH@M9_<M7uJluM;s!&L<JkN!fC`#+{q*Wu%");
-
+                            pgpInstance.EncryptFileAndSign(filePath, encryptedFilePath, chavesCliente, @"C:\Users\ana.pinheiro\Downloads\Criptografia\Old\20200110\TCK.asc", "Gi?6ae}a)14Cv&U%&!U#Qp5^j!n+SH@M9_<M7uJluM;s!&L<JkN!fC`#+{q*Wu%");
 
                             byte[] fileBytes = System.IO.File.ReadAllBytes(encryptedFilePath);
 
@@ -182,6 +184,7 @@ namespace Criptografia.Controllers
                 }
             }
 
+
             // Retorna null caso nenhum arquivo seja criptografado
             return null;
         }
@@ -192,9 +195,9 @@ namespace Criptografia.Controllers
         public FileResult Download(string fileName)
         {
             // Verificar se o nome do arquivo é válido
+            
 
-
-            string filePath = Path.Combine(@"C:\Users\patrick.oliveira\Desktop\Criptografia\Criptografia\Arquivos\Criptografados", fileName);
+            string filePath = Path.Combine(@"C:\Users\ana.pinheiro\Downloads\Criptografia\Criptografia\Arquivos\Criptografados", fileName);
 
             // Verificar se o arquivo existe
 
@@ -218,13 +221,47 @@ namespace Criptografia.Controllers
         }
 
 
-
         public void Decrip()
         {
-            // Seu código para o método DEcrip aqui
+            string pastaArquivosDecrip = @"C:\Users\ana.pinheiro\Downloads\Criptografia\Criptografia\Arquivos\Arquivos DECRIP";
+            string pastaDescriptografados = @"C:\Users\ana.pinheiro\Downloads\Criptografia\Criptografia\Arquivos\Criptografados";
+            string chavePrivada = @"C:\Users\ana.pinheiro\Downloads\Criptografia\Telecall Keys\9E0F5632E05C7228F9256899D5085A8ABE69EFB4.asc";
+            string senha = "Gi?6ae}a)14Cv&U%&!U#Qp5^j!n+SH@M9_<M7uJluM;s!&L<JkN!fC`#+{q*Wu%";
+
+
+            DescriptografarArquivosRecursivamente(pastaArquivosDecrip, pastaDescriptografados, chavePrivada, senha);
         }
 
+        public static void DescriptografarArquivosRecursivamente(string pastaAtual, string pastaDescriptografados, string chavePrivada, string senha)
+        {
+            if (!Directory.Exists(pastaDescriptografados))
+            {
+                Directory.CreateDirectory(pastaDescriptografados);
+            }
+
+            using (PGP pgp = new PGP())
+            {
+                string[] arquivosCriptografados = Directory.GetFiles(pastaAtual, "*.pgp");
+
+                foreach (string caminhoArquivoCriptografado in arquivosCriptografados)
+                {
+                    string nomeArquivo = Path.GetFileNameWithoutExtension(caminhoArquivoDecrip);
+                    string caminhoDescriptografado = Path.Combine(pastaDescriptografados, nomeArquivo);
+
+                    // Descriptografa o arquivo
+                    pgp.DecryptFile(caminhoArquivoDecrip, caminhoDescriptografado, chavePrivada, senha);
+
+                }
+
+                string[] subdiretorios = Directory.GetDirectories(pastaAtual);
+                foreach (string subdiretorio in subdiretorios)
+                {
+                    string nomeSubdiretorio = Path.GetFileName(subdiretorio);
+                    string pastaDestinoSubdiretorio = Path.Combine(pastaDescriptografados, nomeSubdiretorio);
+                    DescriptografarArquivosRecursivamente(subdiretorio, pastaDestinoSubdiretorio, chavePrivada, senha);
+                }
+            }
+        }
+   
     }
 }
-
-
