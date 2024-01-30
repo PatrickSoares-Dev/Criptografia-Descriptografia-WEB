@@ -11,7 +11,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.17" />
     <PackageReference Include="Microsoft.Net.Http.Headers" Version="2.2.8" />
-    <PackageReference Include="PgpCore" Version="5.10.0" />
+    <PackageReference Include="PgpCore" Version="5.5.0" />
   </ItemGroup>
 
 </Project>

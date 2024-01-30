@@ -1,0 +1,37 @@
+﻿ <!-- BEGIN#sidebar -->
+<small id="infoUser"></small>
+<div id="sidebar" class="sidebar flex-col ">
+    <!-- BEGIN scrollbar -->
+    <div data-scrollbar="true" data-height="100%">
+        <ul class="nav">
+
+            <li class="nav-profile">
+
+                <a href="javascript:;" data-toggle="nav-profile">
+                    <div class="cover with-shadow"></div>
+                    <div class="image">
+                    </div>                                       
+                </a>
+            </li>
+
+        </ul>
+        <ul class="nav">
+
+            <li class="nav-header">Menu</li>         
+            <!-- Demais itens de menu -->
+            <li><a asp-controller="Criptografia" asp-action="Criptografia"><i class="fa-solid fa-lock" style="font-size:1.2em;"></i>Criptografia</a></li>
+                                 
+        </ul>
+    </div>
+    <!-- END scrollbar -->
+</div>
+<!-- END #sidebar -->
+<div class="sidebar-bg"></div>
+
+
+
+@section JavaScripts {
+    <script src="~/js/UserAdmin.js" asp-append-version="true"></script>
+    <script src="~/js/Portability.js" asp-append-version="true"></script>
+}
+

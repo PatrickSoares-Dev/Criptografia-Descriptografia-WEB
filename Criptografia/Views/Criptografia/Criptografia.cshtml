@@ -1,0 +1,122 @@
+﻿@{
+    ViewData["Title"] = "Criptografia";
+}
+
+<h3> Criptografia / Descriptografia </h3>
+
+<div id="tableContainer" class="panel panel-inverse">
+    <div id="criptografia" class="panel-heading">
+        <h4 class="panel-title" style="width: 100% !important;">Para solicitações na ferramenta, envie um e-mail para sistemas@telecall.com.</h4>
+    </div>
+
+    <div class="panel-body" style="width: 100% !important;">
+        <div class="row">
+            <div class="form-group col-12">
+                <form id="myForm" style="padding: 10px;">
+
+                    <div id="successMessage" class="alert alert-success fade show" style="display: none;">
+                        <strong>Success!</strong> <span id="successText"></span>
+                    </div>
+
+                    <div id="errorMessage" class="alert alert-danger fade show" style="display: none;">
+                        <strong>Error!</strong> <span id="errorText"></span>
+                    </div>
+
+                    <div class="">
+                        <label for="">Selecione o método:</label>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 0.5rem;">   
+                                                
+                        <input type="radio" name="select" id="crip" value="crip" checked>
+                        <label for="crip" class="option option-1">
+                            <span id="type-crip">Criptografia</span>
+                        </label>
+
+                        <input type="radio" name="select" id="decrip" value="decrip" style="margin-left: 5px;">
+                        <label for="decrip" class="option option-2">
+                            <span id="type-decrip">Descriptografia</span>
+                        </label>
+                    </div>
+                                                            
+
+                    <div class="form-group" id="selectClientBlock" style="margin-top: 0.5rem;">
+
+                        <label for="selectClient">Chave para criptografia:</label>
+                        <select id="selectClient" class="form-control" style="width: 252px;">
+                            <option value="Select" disabled>Selecione...</option>
+                            <option value="JSC">JSC</option>
+                            <option value="VALID">VALID</option>
+                            <option value="1OT">1OT</option>
+                            <option value="GEMALTO">GEMALTO</option>
+                            <option value="LinksField">LinksField</option>
+                            <option value="PARETEUM">TEUM</option>
+                            <option value="GD">G&D</option>
+                            <option value="WATCHDATA">WATCHDATA</option>
+                            <option value="TELIA">TELIA</option>
+                            <option value="WORKZ">WORKZ</option>
+                        </select>
+
+                    </div>
+
+                    <div class="">
+
+                        <label for="fileInput">Anexe um arquivo: </label>
+                        
+                    </div>
+
+                    <div class="">
+                        <input type="file" id="fileInput" alt="file" multiple />
+                    </div>
+
+                    <div class="form-group" style="margin-top: 1rem;">
+
+                        <button type="button" class="btn btn-primary" id="btnFunction">Processar</button>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+     $('input[name="select"]').change(function () {
+        var selectedValue = $('input[name="select"]:checked').val();
+
+        // Verifique se o valor selecionado é 'decrip', se for, oculte o bloco selectClient, caso contrário, exiba
+        if (selectedValue === 'decrip') {
+            $('#selectClientBlock').hide();
+        } else {
+            $('#selectClientBlock').show();
+        }
+    });
+</script>
+
+<style>
+
+    #fileInput {
+        border-radius: 4px;
+        font-size: 10px;
+        font-weight: 600;
+        font-size: 10px;
+        padding: 6px 8px;
+        box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+    }
+
+</style>
+ 
+
+@section JavaScripts {
+ 
+    <script src="~/lib/jquery.form/jquery.form.js"></script>
+    <script src="~/js/Criptografia.js" asp-append-version="true"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.js"></script>
+
+}
+
+
+

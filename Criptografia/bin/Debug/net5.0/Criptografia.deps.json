@@ -38,7 +38,7 @@
           "Microsoft.AspNetCore.Http.Features": "5.0.17",
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "5.0.17",
           "Microsoft.Net.Http.Headers": "2.2.8",
-          "PgpCore": "5.10.0",
+          "PgpCore": "5.5.0",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "5.0.0.0",
@@ -327,17 +327,6 @@
           "Criptografia.dll": {}
         }
       },
-      "BouncyCastle.Cryptography/2.1.1": {
-        "runtime": {
-          "lib/netstandard2.0/BouncyCastle.Cryptography.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.1.1.34079"
-          }
-        },
-        "compile": {
-          "lib/netstandard2.0/BouncyCastle.Cryptography.dll": {}
-        }
-      },
       "JSZip/3.7.1": {},
       "Microsoft.AspNetCore.Http/2.2.2": {
         "dependencies": {
@@ -588,18 +577,29 @@
         }
       },
       "Microsoft.NETCore.Platforms/2.1.2": {},
-      "PgpCore/5.10.0": {
+      "PgpCore/5.5.0": {
         "dependencies": {
-          "BouncyCastle.Cryptography": "2.1.1"
+          "Portable.BouncyCastle": "1.8.9"
         },
         "runtime": {
           "lib/netstandard2.0/PgpCore.dll": {
             "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.10.0.0"
+            "fileVersion": "5.5.0.0"
           }
         },
         "compile": {
           "lib/netstandard2.0/PgpCore.dll": {}
+        }
+      },
+      "Portable.BouncyCastle/1.8.9": {
+        "runtime": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
+            "assemblyVersion": "1.8.9.0",
+            "fileVersion": "1.8.9.1"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {}
         }
       },
       "System.Buffers/4.5.0": {},
@@ -2315,13 +2315,6 @@
       "serviceable": false,
       "sha512": ""
     },
-    "BouncyCastle.Cryptography/2.1.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-NNQaa4eyf5YjSdLKUWGPzq5HXZQc3yGybfIOkR6UY1C/rRFWdo0UhSzBqqnxwGnq3ie4vkN0JlzhhANjfTIJIQ==",
-      "path": "bouncycastle.cryptography/2.1.1",
-      "hashPath": "bouncycastle.cryptography.2.1.1.nupkg.sha512"
-    },
     "JSZip/3.7.1": {
       "type": "package",
       "serviceable": true,
@@ -2455,12 +2448,19 @@
       "path": "microsoft.netcore.platforms/2.1.2",
       "hashPath": "microsoft.netcore.platforms.2.1.2.nupkg.sha512"
     },
-    "PgpCore/5.10.0": {
+    "PgpCore/5.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-F9asyrIef3h2Fv8cLEtJr2fzlKojGgnG3a6CWrwSAhMO1tmy/qarqQa+RQ+wk1u2JMrzBwxh1w5LEr+Zhtjtcg==",
-      "path": "pgpcore/5.10.0",
-      "hashPath": "pgpcore.5.10.0.nupkg.sha512"
+      "sha512": "sha512-gzuO78gtgNtYuCgpJcI7aQK5RSOxv9etTdKeg4TNU+7p+8B+Wtu5F5tNrEFZin5v5pHGruK5m0tBzCUH0134DQ==",
+      "path": "pgpcore/5.5.0",
+      "hashPath": "pgpcore.5.5.0.nupkg.sha512"
+    },
+    "Portable.BouncyCastle/1.8.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wlJo8aFoeyl+W93iFXTK5ShzDYk5WBqoUPjTNEM0Xv9kn1H+4hmuCjF0/n8HLm9Nnp1aY6KNndWqQTNk+NGgRQ==",
+      "path": "portable.bouncycastle/1.8.9",
+      "hashPath": "portable.bouncycastle.1.8.9.nupkg.sha512"
     },
     "System.Buffers/4.5.0": {
       "type": "package",
